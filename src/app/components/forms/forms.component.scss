@@ -14,11 +14,6 @@
   border-radius: 8px;
 }
 
-.form-group .radio-wrapper input,
-.form-group .checkbox-wrapper input {
-  margin-right: 4px;
-}
-
 .form-group .form-icon {
   font-size: 14px;
   color: var(--light-grey);
@@ -64,6 +59,7 @@
 
 .form-group .btn-wrapper {
   display: flex;
+  flex-direction: column;
   gap: 12px;
   align-items: center;
   justify-content: center;
@@ -76,7 +72,7 @@
   color: var(--dark-grey);
   font-weight: 700;
   padding: 14px;
-  width: 25%;
+  width: 100%;
   border: none;
   cursor: pointer;
 }
@@ -91,12 +87,30 @@
 
 .form-group .checkbox-wrapper {
   color: var(--light-grey);
-  margin: 32px 0;
-  position: relative;
   width: 100%;
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
 }
 
-.form-group .checkbox-wrapper span {
-  position: absolute;
-  right: 0;
+.form-group .checkbox-wrapper input,
+.form-group .radio-wrapper input {
+  margin-right: 4px;
+}
+
+@media (min-width: 768px) {
+  .form-group .btn-wrapper {
+    flex-direction: row;
+  }
+
+  .form-group .btn-wrapper .btn {
+    width: 25%;
+  }
+
+  .form-group .checkbox-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
